@@ -80,7 +80,7 @@ class LayerLoaderDialog(QDialog):
             )
 
             pasta_saida = "D:/"
-            nome_arquivo = f"recorte_sentinel_{tamanho_pixels}px.tif"
+            nome_arquivo = f"recorte_sentinel_{self.item_encontrado.id}_{tamanho_pixels}px.tif"
             caminho_saida = os.path.join(pasta_saida, nome_arquivo)
 
             self.label_status.setText("Iniciando download do recorte...")
