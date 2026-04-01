@@ -36,6 +36,7 @@ class LayerLoaderDialog(QDialog):
 
     def ativar_selecao_ponto(self):
         self.label_status.setText("Clique em um ponto no mapa...")
+        self.hide()
         self.map_selector.ativar()
 
     def ponto_selecionado(self, x, y):
@@ -44,6 +45,10 @@ class LayerLoaderDialog(QDialog):
 
         self.label_coordenada.setText(f"X: {self.x:.6f} | Y: {self.y:.6f}")
         self.label_status.setText("Ponto selecionado com sucesso.")
+
+        self.show()
+        self.raise_()
+        self.activateWindow()
 
     def buscar_sentinel(self):
         self.label_status.setText("Buscando imagem Sentinel-2...")
